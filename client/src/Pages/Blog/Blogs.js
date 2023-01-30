@@ -30,8 +30,8 @@ const Blogs = () => {
   const { isLoading,products } = useSelector(state=>state.products);
 
   useEffect(() => {
-      window.scrollTo({top:0,behavior: 'smooth'});
-      dispatch(getBlogs({keyword:searchParams.get("s"),page:searchParams.get("page"),category:searchParams.get("category"),tags:searchParams.get("tags")}))
+    dispatch(getBlogs({keyword:searchParams.get("s"),page:searchParams.get("page"),category:searchParams.get("category"),tags:searchParams.get("tags")}))
+    window.scrollTo({top:0,behavior: 'smooth'});
   }, [searchParams])
 
   useEffect(()=>{

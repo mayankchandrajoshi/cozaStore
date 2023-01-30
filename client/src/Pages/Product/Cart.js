@@ -205,7 +205,6 @@ const Cart = () => {
                 theme: "colored",
             });
             dispatch(clearAddressError());
-            window.scrollTo({top:0,behavior:"smooth"});
         }
     },[successAddress,errorAddress])
 
