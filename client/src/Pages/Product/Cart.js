@@ -68,6 +68,7 @@ const Cart = () => {
                 theme: "colored",
             });
             dispatch(clearErrors());
+            window.scrollTo({top:0,behavior:"smooth"});
         }
         if(success){
             toast.success(message,{
@@ -81,6 +82,7 @@ const Cart = () => {
                 theme: "colored",
             });
             dispatch(clearSuccess());
+            window.scrollTo({top:0,behavior:"smooth"});
         }
     },[error,success])
 
@@ -203,8 +205,9 @@ const Cart = () => {
                 theme: "colored",
             });
             dispatch(clearAddressError());
+            window.scrollTo({top:0,behavior:"smooth"});
         }
-    })
+    },[successAddress,errorAddress])
 
   return (
     isLoadingCart?<div className="w-screen h-screen flex"><Loader/></div>:<><MetaData title={'Shopping Cart'}/>

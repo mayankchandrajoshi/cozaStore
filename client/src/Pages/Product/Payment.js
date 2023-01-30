@@ -1,8 +1,12 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { Link } from 'react-router-dom'
 import { IoBagCheck } from 'react-icons/io5'
 
 const Payment = () => {
+
+  useEffect(()=>{
+    window.scrollTo({top:0,behavior:"smooth"});
+  },[])
 
   return (
     <div className='w-screen h-[85vh] md:h-screen text-base md:text-xl flex flex-col justify-center items-center gap-4'>

@@ -18,6 +18,7 @@ const Order = () => {
 
   useEffect(()=>{
     dispatch(getMyOrders(page));
+    window.scrollTo({top:0,behavior:"smooth"});
   },[page])
 
   useEffect(()=>{

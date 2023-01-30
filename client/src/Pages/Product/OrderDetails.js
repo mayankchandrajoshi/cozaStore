@@ -12,6 +12,7 @@ const OrderDetails = () => {
 
   useEffect(()=>{
     dispatch(getOrderDetails(id));
+    window.scrollTo({top:0,behavior:"smooth"});
   },[id])
 
   return (

@@ -32,6 +32,8 @@ const CheckOut = () => {
     useEffect(()=>{
         if((!cartItems||cartItems.length==0)||!address){
             navigate("/cart");
+        }else{
+            window.scrollTo({top:0,behavior:"smooth"});
         }
     },[])
     
@@ -187,7 +189,7 @@ const CheckOut = () => {
                 cartItems.map(cartItem=>(
                     <div className="p-2 border-[1px] border-solid border-grey3 mb-2 rounded-md" key={cartItem._id}>
                         <div>
-                            <img src={cartItem.image} alt="" className="w-full aspect-video object-center object-cover" />
+                            <img src={cartItem.image} alt="" className="w-full aspect-[4/5] object-center object-cover" />
                             <div className='mt-2 capitalize font-bold text-sm line-clamp-2'>{cartItem.name}</div>
                         </div>
                         <div className="p-1 pt-4 sm:px-4 flex justify-between flex-wrap">
