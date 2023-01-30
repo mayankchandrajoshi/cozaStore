@@ -26,13 +26,16 @@ import store from "./store";
 import WithNavAndFootBarRoute from "./Utils/WithNavAndFootBarRoute";
 import { ToastContainer } from "react-toastify";
 import 'react-toastify/dist/ReactToastify.css';
+import { useLayoutEffect } from "react";
 
 function App() {
-
-  window.onload=async()=>{
-    await store.dispatch(loadUser());
-    store.dispatch(clearUserError());
-  };
+  
+  useLayoutEffect(()=>{
+    (async()=>{
+      await store.dispatch(loadUser());
+      store.dispatch(clearUserError());
+    })();
+  },[])
   
   return (
     <>
