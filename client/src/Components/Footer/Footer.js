@@ -70,7 +70,7 @@ const Footer = () => {
     <div className='flex justify-center font-[Poppins] pb-10 text-[13px] bg-bg-black text-[#abab9b]'>
         <div className='flex justify-center gap-1 sm:gap-5 max-w-[1195px] w-screen px-5'>
             <img src="/Images/gpay2.png" alt="Google Pay" className="min-w-0 w-9 h-6 rounded-sm object-cover"  loading="lazy"/>
-            <img src="/Images/phonepe3.webp" alt="Phone Pe" className="min-w-0 w-9 h-6 rounded-sm object-cover"  loading="lazy"/>
+            <img src="/Images/Phonepe3.webp" alt="Phone Pe" className="min-w-0 w-9 h-6 rounded-sm object-cover"  loading="lazy"/>
             <img src="/Images/viza.jpg" alt="Viza" className="min-w-0 w-9 h-6 rounded-sm object-cover"  loading="lazy"/>
             <img src="/Images/masterCard2.png" alt="MasterCard" className="min-w-0 w-9 h-6 rounded-sm object-cover"  loading="lazy"/>
             <img src="/Images/paytm.jpg" alt="Paytm" className="min-w-0 w-9 h-6 rounded-sm object-cover"  loading="lazy"/>
