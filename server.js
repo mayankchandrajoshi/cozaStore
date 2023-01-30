@@ -17,7 +17,7 @@ connectDatabase().then(()=>{
         api_secret: process.env.CLOUDINARY_API_SECRET,
     });
 
-    const server=app.listen(process.env.PORT,()=>{
+    const server=app.listen(process.env.PORT||3000,()=>{
         console.log("Server listening on port " + process.env.PORT);
     })
     
