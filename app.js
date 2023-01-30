@@ -24,12 +24,6 @@ const productReviewRoutes = require("./routes/productReviewRoute");
 const cartItemRoutes = require("./routes/cartRoute");
 const paymentRoutes = require("./routes/paymentRoute")
 
-app.get("/",(req,res)=>{
-    res.status(200).json({
-        message:"Welcome User"
-    })
-})
-
 app.use('/api/v1',userRoutes);
 app.use('/api/v1',blogRoutes);
 app.use("/api/v1",productRoutes);
