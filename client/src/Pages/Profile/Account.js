@@ -64,15 +64,15 @@ const Account = () => {
         <div className='flex flex-col text-center md:text-left justify-center items-center md:items-start gap-6 md:gap-12'>
           <div>
             <h4 className='text-black font-normal text-xl font-[Poppins]'>Full Name</h4>
-            <p className='text-text-Grey font-normal font-[cursive] text-sm md:text-lg break-all'>{user.name}</p>
+            <p className='text-text-Grey font-normal text-sm md:text-lg break-all'>{user.name}</p>
           </div>
           <div>
             <h4 className='text-black font-normal text-xl font-[Poppins]'>Email</h4>
-            <p className='text-text-Grey font-normal font-[cursive] text-sm md:text-lg break-all'>{user.email}</p>
+            <p className='text-text-Grey font-normal text-sm md:text-lg break-all'>{user.email}</p>
           </div>
           <div>
             <h4 className='text-black font-normal text-xl font-[Poppins]'>Joined On</h4>
-            <p className='text-text-Grey font-normal font-[cursive] text-sm md:text-lg break-all'>{String(user.createdAt).substring(0, 10)}</p>
+            <p className='text-text-Grey font-normal text-sm md:text-lg break-all'>{String(user.createdAt).substring(0, 10)}</p>
           </div>
           <div className='flex flex-col w-full tablet:w-3/4 mt-auto gap-5 md:gap-10'>
             <Link to="/orders" className='bg-text-black font=normal font-[Poppins] text-base text-white p-2 text-center transition-all duration-500 hover:bg-bg-black'>My Orders</Link>
