@@ -1,0 +1,31 @@
+.MainSlider .swiper-button-next {
+    background-color: rgb(156, 153, 153);
+    clip-path: polygon(79% 52%, 0 0, 0 100%);
+    transform: translate(-100%,0%) scale(75%);
+    transition:  all 500ms;
+}
+  
+.MainSlider .swiper-button-next::after {
+    display: none;
+  }
+
+.MainSlider .swiper-button-prev {
+  background-color: rgb(156, 153, 153);
+  clip-path: polygon(21% 54%, 100% 0, 100% 100%);
+  transform: translate(100%,0%) scale(75%);
+  transition:  all 500ms;
+}
+
+.MainSlider .swiper-button-prev::after {
+  display: none;
+}
+
+.MainSlider .swiper-button-next:hover , .MainSlider .swiper-button-prev:hover{
+  background-color: #717fe0;
+}
+
+@media screen and (max-width: 991px) {
+  .MainSlider .swiper-button-next,.MainSlider .swiper-button-prev{
+    display: none;
+  }
+}

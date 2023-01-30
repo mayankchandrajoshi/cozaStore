@@ -1,0 +1,6 @@
+.swiper-button-next,.swiper-button-prev {
+    color:grey;
+    transform: translate(0%,-50%) scale(50%);
+    z-index: 2;
+    font-weight: 900;
+}
