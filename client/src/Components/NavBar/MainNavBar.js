@@ -49,7 +49,8 @@ const MainNavBar = () => {
 
     useLayoutEffect(()=>{
         const scrollListenerFunc = function(){
-            const currentPos = upperNavRef.current.clientHeight-this.scrollY;
+            const currentPos = height-this.scrollY;
+            document.title = currentPos;
             currentPos>=0?setScrollPos(currentPos):setScrollPos(0);
         }
         window.addEventListener("scroll",scrollListenerFunc,{passive:true});
