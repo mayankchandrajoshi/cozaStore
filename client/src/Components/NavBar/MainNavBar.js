@@ -53,9 +53,11 @@ const MainNavBar = () => {
             currentPos>=0?setScrollPos(currentPos):setScrollPos(0);
         }
         window.addEventListener("scroll",scrollListenerFunc,{passive:true});
+        window.addEventListener("touchmove",scrollListenerFunc,{passive:true});
 
         return ()=>{
             window.removeEventListener("scroll",scrollListenerFunc);
+            window.removeEventListener("touchmove",scrollListenerFunc);
         }
     },[height])
 
