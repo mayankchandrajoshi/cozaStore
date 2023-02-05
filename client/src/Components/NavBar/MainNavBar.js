@@ -37,18 +37,6 @@ const MainNavBar = () => {
     },[])
 
     useLayoutEffect(()=>{
-        const scrollListenerFunc = function(){
-            const currentPos = height-this.scrollY;
-            currentPos>=0?setScrollPos(currentPos):setScrollPos(0);
-        }
-        window.addEventListener("scroll",scrollListenerFunc,{passive:true});
-
-        return ()=>{
-            window.removeEventListener("scroll",scrollListenerFunc);
-        }
-    },[height])
-
-    useLayoutEffect(()=>{
         const resizeListenerFunc = function(){
             setHeight(upperNavRef.current.clientHeight);
             setScrollPos(upperNavRef.current.clientHeight);
@@ -58,6 +46,18 @@ const MainNavBar = () => {
             window.removeEventListener("resize",resizeListenerFunc);
         }
     },[])
+
+    useLayoutEffect(()=>{
+        const scrollListenerFunc = function(){
+            const currentPos = height-window.scrollY;
+            currentPos>=0?setScrollPos(currentPos):setScrollPos(0);
+        }
+        window.addEventListener("scroll",scrollListenerFunc,{passive:true});
+
+        return ()=>{
+            window.removeEventListener("scroll",scrollListenerFunc);
+        }
+    },[height])
 
     useEffect(() => {
         mainNavRef.current.style.top=`${scrollPos}px`;
