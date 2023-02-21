@@ -50,13 +50,19 @@ const MainNavBar = () => {
     useLayoutEffect(()=>{
         const scrollListenerFunc = function(){
             const currentPos = height-this.scrollY;
-            document.title = currentPos;
             currentPos>=0?setScrollPos(currentPos):setScrollPos(0);
         }
-        window.addEventListener("scroll",scrollListenerFunc,{passive:true});
+        const isTouchDevice = ('ontouchstart' in window) || (navigator.maxTouchPoints > 0) || (navigator.msMaxTouchPoints > 0);
 
+        if(isTouchDevice){ 
+            window.addEventListener("touchmove",scrollListenerFunc);
+        }
+        else  window.addEventListener("scroll",scrollListenerFunc);
         return ()=>{
-            window.removeEventListener("scroll",scrollListenerFunc);
+            if(isTouchDevice){ 
+                window.removeEventListener("touchmove",scrollListenerFunc);
+            }
+            else  window.removeEventListener("scroll",scrollListenerFunc);
         }
     },[height])
 
