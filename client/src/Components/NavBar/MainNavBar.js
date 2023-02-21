@@ -52,21 +52,15 @@ const MainNavBar = () => {
             const currentPos = height-this.scrollY;
             currentPos>=0?setScrollPos(currentPos):setScrollPos(0);
         }
-        const isTouchDevice = ('ontouchstart' in window) || (navigator.maxTouchPoints > 0) || (navigator.msMaxTouchPoints > 0);
+        window.addEventListener("scroll",scrollListenerFunc,{passive:true});
 
-        if(isTouchDevice){ 
-            window.addEventListener("touchmove",scrollListenerFunc);
-        }
-        else  window.addEventListener("scroll",scrollListenerFunc);
         return ()=>{
-            if(isTouchDevice){ 
-                window.removeEventListener("touchmove",scrollListenerFunc);
-            }
-            else  window.removeEventListener("scroll",scrollListenerFunc);
+            window.removeEventListener("scroll",scrollListenerFunc);
         }
     },[height])
 
     useEffect(() => {
+        if(Number(mainNavRef.current.offsetTop)===scrollPos) return;
         mainNavRef.current.style.top=`${scrollPos}px`;
     }, [scrollPos])
   
