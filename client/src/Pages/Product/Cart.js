@@ -13,6 +13,14 @@ import { toast } from 'react-toastify';
 
 const allStates = ['Andaman & Nicobar','Andhra Pradesh','Arunachal Pradesh', 'Assam','Bihar', 'Chandigarh' ,  'Chattisgarh', 'Dadra & Nagar Haveli'  , 'Daman & Diu'  , 'Delhi'  ,'Goa' , 'Gujarat' , 'Haryana' , 'Himachal Pradesh',  'Jammu & Kashmir', 'Jharkhand' , 'Karnataka' , 'Kerala' , 'Lakshadweep' ,'Madhya Pradesh' , 'Maharashtra', 'Manipur' , 'Meghalaya'  ,'Mizoram', 'Nagaland', 'Odisha ', 'Pondicherry', 'Punjab', 'Rajasthan', 'Sikkim', 'Tamil Nadu', 'Telangana' , 'Tripura' , 'Uttar Pradesh', 'Uttarakhand', 'West Bengal']
 
+function stringToNumber(str) {
+    if (/^\d+$/.test(str)) {
+        return true;
+    } else {
+    return false
+    }
+}  
+
 const Cart = () => {
 
     const dispatch = useDispatch();
@@ -116,6 +124,21 @@ const Cart = () => {
             setLoadingButton(false);
             return;
         }
+
+        if (!stringToNumber(phoneNo)) {
+            toast.error("Please enter valid Phone Number",{
+                position: "bottom-center",
+                autoClose: 5000,
+                hideProgressBar: false,
+                closeOnClick: true,
+                pauseOnHover: true,
+                draggable: true,
+                progress: undefined,
+                theme: "colored",
+            });
+            setLoadingButton(false);
+            return;
+        }
         if(!house){
             toast.error("Please enter house number/Building name",{
                 position: "bottom-center",
@@ -183,7 +206,7 @@ const Cart = () => {
                 return;
             }
         }
-        await dispatch(setAddress({phoneNo,house,area,state,pincode}));
+        await dispatch(setAddress({phoneNo: parseInt(phoneNo,10),house,area,state,pincode}));
         setLoadingButton(false);
     }
 
