@@ -1,4 +1,4 @@
-Live link : https://rich-lingerie-lamb.cyclic.app
+Live link : https://cozastorebackend.onrender.com
 
 To run it on your local server ,create an .env file inside config folder and add these variables
 
